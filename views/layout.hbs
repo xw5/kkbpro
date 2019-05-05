@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/index.css'/>
+</head>
+<body>
+<div class="top_nav">
+    <div class="nav">
+        <div class="left-logo"><a><img src="https://img.kaikeba.com/logo-new.png" alt="" style="opacity: 0;"></a></div>
+        <div class="right-view">
+            <ul class="right-text">
+                <li class="vip hover-li" style="position: relative;">
+                    <a><span>VIP课<i class="anticon anticon-plus plus"></i><i class="anticon anticon-minus minus"></i></span></a>
+                    <div class="menu-second">
+                        <i class="anticon anticon-caret-up caret-up"></i>
+                        <i class="anticon anticon-caret-up caret-up-cover"></i>
+                        <div class="menu-content">
+                            <div style="overflow: hidden; padding: 0px 43px;"><p class="vip-title">VIP课程</p>
+                                <div class="col-course">
+                                    {{#each courses}}
+                                        <a href="{{url}}">
+                                            <div class="row-course left-course">
+                                                <img class="course-img" src="{{icon}}" alt="">
+                                                <div class="course-text">
+                                                    <p class="course-name">{{name}}</p>
+                                                    <p class="course-describe">{{desc}}</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a>公开课</a></li>
+                <li><a>关于我们</a></li>
+                <li>
+                    <img src="https://img.kaikeba.com/grey1.png" class="study-icon-grey">
+                    <img src="https://img.kaikeba.com/blue1.png" class="study-icon-blue">
+                    <div class="text-left">学习中心</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{{{body}}}
+</body>
+</html>
