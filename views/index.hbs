@@ -1,2 +1,44 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+{{#if showVideo}}
+    <div id="home-video"
+         style="background-color: rgb(0, 166, 212); position: fixed; z-index: 200000; width: 100%; height: 100%; top: 0; right: 0; left: 0;">
+        <video autoplay muted class="home-banner-video" id="home-banner-video"
+               style="position: absolute; top: 0; right: 0; left: 0; bottom: 0;">
+            <source src="https://img.kaikeba.com/slogan_new.mp4" type="video/mp4">
+        </video>
+    </div>
+{{/if}}
+
+<div class="vip-course" style="background: rgb(236, 242, 245);"><a class="a-click" style="display: none;"></a>
+    <div class="slogan">
+        <div class="slogan-text">
+            <h1 class="remark">精品课程，全新升级</h1>
+            <p class="remark-content">系统化名师授课，前沿性方法教学，班级化学员管理，实战性成果校验</p>
+        </div>
+        <div class="pc-vip">
+            {{#each courses}}
+            <div style="margin-top:20px">
+                <div class="book-card first-book-card">
+                    <div style="transform: translate(0px, 0px);">
+                        <div class="right-img">
+                            <div class="img_1" style="background-image:url({{poster}})"></div>
+                        </div>
+                    </div>
+                    <div style="transform: translate(0px, 0px);">
+                        <div class="left-text">
+                            <p class="course-title">{{name}}</p>
+                            <p class="course-introduce">{{desc}}</p>
+                            <div class="cooperate-company">
+                                <span>学员去向企业：</span>
+                                {{#each cooperation}}
+                                  <img src="{{this}}" alt="" />
+                                {{/each}}
+                            </div>
+                            <img class="arrow" src="https://img.kaikeba.com/arrow.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

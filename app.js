@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');// 处理路径相关
 var cookieParser = require('cookie-parser');// cookie解析
 var logger = require('morgan');// 日志
+var hbs = require('hbs');
 
 // 导入自定义中间件
 const {initLocals} = require("./middleware");
@@ -18,6 +19,11 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+// 注册帮助方法
+hbs.registerHelper('addOne', function(num) {
+  return ++num;
+});
 
 // 应用中间件
 app.use(logger('dev'));
